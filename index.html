@@ -5,114 +5,266 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Создание веб сайтов для бизнеса</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Hero секция */
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            opacity: 0.95;
         }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
+        
+        /* Секция преимуществ */
+        .benefits {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .benefits-title {
             text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e3a5f;
+            font-weight: 700;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-card:nth-child(1) {
+            border-top-color: #10b981;
+        }
+        
+        .benefit-card:nth-child(2) {
+            border-top-color: #ff6b35;
+        }
+        
+        .benefit-card:nth-child(3) {
+            border-top-color: #8b1538;
+        }
+        
+        .benefit-card:nth-child(4) {
+            border-top-color: #059669;
+        }
+        
+        .benefit-card:nth-child(5) {
+            border-top-color: #ff8c42;
+        }
+        
+        .benefit-card:nth-child(6) {
+            border-top-color: #1e3a5f;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1e3a5f;
+        }
+        
+        .benefit-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* Секция о проекте */
+        .about {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+        }
+        
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .about h2 {
+            font-size: 2.5rem;
             margin-bottom: 30px;
+            text-align: center;
         }
-        h1 {
-            margin: 0;
+        
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            line-height: 1.8;
         }
-        main {
-            background-color: white;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        
+        /* Техническая секция */
+        .technical {
+            padding: 80px 20px;
+            background: #ffffff;
         }
-        h2 {
-            color: #333;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            margin-top: 30px;
+        
+        .technical-content {
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        h2:first-of-type {
-            margin-top: 0;
+        
+        .technical h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #1e3a5f;
         }
-        p {
-            margin-bottom: 15px;
+        
+        .technical p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
         }
-        ul {
-            margin-bottom: 15px;
-            padding-left: 25px;
-        }
-        li {
-            margin-bottom: 8px;
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-title,
+            .about h2,
+            .technical h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Hero секция -->
+    <section class="hero">
         <h1>Создание веб сайтов для бизнеса</h1>
-    </header>
-    <main>
-        <h2>О проекте</h2>
-        <p>
-            Этот проект служит тестовой площадкой для оценки практических рабочих процессов 
-            разработки веб-сайтов с помощью AI в Cursor IDE. Цель — понять, как AI-ассистенты 
-            могут эффективно сотрудничать с разработчиками при создании веб-решений для бизнеса, 
-            следуя структурированным правилам и лучшим практикам.
-        </p>
-        <p>
-            Проект фокусируется на прозрачности, безопасности и итеративном улучшении 
-            в процессе разработки веб-приложений.
-        </p>
+        <p>Профессиональные веб-решения для развития вашего бизнеса в цифровом пространстве</p>
+    </section>
 
-        <h2>Зачем бизнесу нужен веб-сайт</h2>
-        <p>
-            В современной цифровой экономике наличие веб-сайта перестало быть опциональным 
-            и стало необходимостью для большинства бизнесов. Веб-сайт выполняет несколько 
-            критических функций:
-        </p>
-        <ul>
-            <li>
-                <strong>Круглосуточная доступность</strong> — сайт работает 24/7, предоставляя 
-                информацию о продуктах и услугах без ограничений по времени и местоположению.
-            </li>
-            <li>
-                <strong>Расширение аудитории</strong> — выход на глобальный рынок без 
-                необходимости физического присутствия в разных регионах.
-            </li>
-            <li>
-                <strong>Кредит доверия</strong> — профессиональный сайт повышает доверие 
-                клиентов и партнеров, демонстрируя серьезность намерений компании.
-            </li>
-            <li>
-                <strong>Маркетинговый инструмент</strong> — сайт служит центральной точкой 
-                для SEO, контент-маркетинга и интеграции с социальными сетями.
-            </li>
-            <li>
-                <strong>Автоматизация процессов</strong> — онлайн-заказы, бронирования, 
-                обработка запросов снижают операционные расходы.
-            </li>
-            <li>
-                <strong>Аналитика и данные</strong> — сбор информации о поведении посетителей 
-                помогает принимать обоснованные бизнес-решения.
-            </li>
-        </ul>
+    <!-- Секция преимуществ -->
+    <section class="benefits">
+        <h2 class="benefits-title">Преимущества создания сайта для вашего бизнеса</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Круглосуточная доступность</h3>
+                <p>Ваш сайт работает 24/7, предоставляя информацию о продуктах и услугах без ограничений по времени и местоположению. Клиенты могут узнать о вас в любое удобное время.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Расширение аудитории</h3>
+                <p>Выход на глобальный рынок без необходимости физического присутствия в разных регионах. Ваш бизнес становится доступным для клиентов по всему миру.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Кредит доверия</h3>
+                <p>Профессиональный сайт повышает доверие клиентов и партнеров, демонстрируя серьезность намерений компании и современный подход к ведению бизнеса.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Маркетинговый инструмент</h3>
+                <p>Сайт служит центральной точкой для SEO, контент-маркетинга и интеграции с социальными сетями. Эффективный канал привлечения новых клиентов.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Автоматизация процессов</h3>
+                <p>Онлайн-заказы, бронирования, обработка запросов снижают операционные расходы и освобождают время для решения стратегических задач.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Аналитика и данные</h3>
+                <p>Сбор информации о поведении посетителей помогает принимать обоснованные бизнес-решения и оптимизировать маркетинговые стратегии.</p>
+            </div>
+        </div>
+    </section>
 
-        <h2>Технические аспекты разработки</h2>
-        <p>
-            Создание эффективного бизнес-сайта требует баланса между функциональностью, 
-            производительностью и удобством использования. Современные подходы к разработке 
-            включают адаптивный дизайн, оптимизацию скорости загрузки, безопасность данных 
-            и доступность для всех пользователей.
-        </p>
-        <p>
-            Использование AI-ассистентов в процессе разработки позволяет ускорить создание 
-            качественных решений, автоматизировать рутинные задачи и поддерживать соответствие 
-            лучшим практикам веб-разработки.
-        </p>
-    </main>
+    <!-- Секция о проекте -->
+    <section class="about">
+        <div class="about-content">
+            <h2>О проекте</h2>
+            <p>
+                Этот проект служит тестовой площадкой для оценки практических рабочих процессов 
+                разработки веб-сайтов с помощью AI в Cursor IDE. Цель — понять, как AI-ассистенты 
+                могут эффективно сотрудничать с разработчиками при создании веб-решений для бизнеса, 
+                следуя структурированным правилам и лучшим практикам.
+            </p>
+            <p>
+                Проект фокусируется на прозрачности, безопасности и итеративном улучшении 
+                в процессе разработки веб-приложений.
+            </p>
+        </div>
+    </section>
+
+    <!-- Техническая секция -->
+    <section class="technical">
+        <div class="technical-content">
+            <h2>Технические аспекты разработки</h2>
+            <p>
+                Создание эффективного бизнес-сайта требует баланса между функциональностью, 
+                производительностью и удобством использования. Современные подходы к разработке 
+                включают адаптивный дизайн, оптимизацию скорости загрузки, безопасность данных 
+                и доступность для всех пользователей.
+            </p>
+            <p>
+                Использование AI-ассистентов в процессе разработки позволяет ускорить создание 
+                качественных решений, автоматизировать рутинные задачи и поддерживать соответствие 
+                лучшим практикам веб-разработки.
+            </p>
+        </div>
+    </section>
 </body>
 </html>
-
